@@ -1,24 +1,17 @@
 import React from 'react';
 import './card.css';
 
-
-function Card(props) {
-  const title = (
-    <h3 className='title'>
-      {props.title}
-    </h3>
-  )
-  const content = (
-    <p className='content'>
-      {props.content}
-    </p>
-  )
+export default function Card(props) {
   return (
     <div className='Card'>
-      {title}
-      {content}
+      <button
+        type='button'
+        onClick = {() => props.onDeleteItem(props.id)}
+      >
+        delete
+      </button>
+      <h3>{props.title}</h3>
+      <p>{props.content}</p>
     </div>
   )
 }
-
-export default Card;
